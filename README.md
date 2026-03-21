@@ -26,6 +26,15 @@ ANTHROPIC_API_KEY=your_anthropic_api_key_here
 OPENAI_API_KEY=your_openai_api_key_here
 ```
 
+> **Using a single provider:** If you only have one LLM provider (e.g. Anthropic but not OpenAI), you can set `MODEL_NAME` and `MODEL_NAME_REWRITE` to models from the same provider. The query rewrite agent defaults to `gpt-4.1-nano` (OpenAI) but can be overridden:
+>
+> ```bash
+> MODEL_NAME=anthropic/claude-sonnet-4-20250514
+> MODEL_NAME_REWRITE=anthropic/claude-haiku-4-5-20251001
+> ```
+>
+> See [LiteLLM docs](https://docs.litellm.ai/docs/providers) for supported provider prefixes.
+
 ### 3. Configure AI Providers in Braintrust
 
 If you want to use Anthropic and OpenAI models with Braintrust Loop:

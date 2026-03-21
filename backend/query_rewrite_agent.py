@@ -29,7 +29,7 @@ litellm_wrapper = bt.wrap_litellm(litellm)  # type: ignore
 class QueryRewriteAgent:
     """LLM-powered agent for optimizing retrieval queries."""
 
-    def __init__(self, model: str = "gpt-4.1-nano", max_workers: int = 32):
+    def __init__(self, model: str = os.environ.get("MODEL_NAME_REWRITE", "gpt-4.1-nano"), max_workers: int = 32):
         self.model = model
         self.max_workers = max_workers
 
